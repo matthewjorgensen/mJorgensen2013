@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="span6 social-wrap">
+			<ul class="unstyled clearfix">
+				<li><a class="icon-facebook" href="http://www.facebook.com/mjorgensenstudio" target="_blank">Connect on Facebook with mJorgensen Studio</a></li>
+				<li><a class="icon-vimeo" href="http://www.vimeo.com/mjorgensen" target="_blank">Vimeo</a></li>
+				<li><a class="icon-twitter" href="https://twitter.com/mJorgensen_LIVE" target="_blank">Follow mJorgensen Studio on Twitter</a></li>
+				<li><a class="icon-linkedin" href="http://www.linkedin.com/mattjorgensen" target="_blank">Connect with Matthew Jorgensen on LinkedIn</a></li>
+			</ul>
+			<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		</div>
+		<div class="span5 instagram-wrap pull-right">
+			<div class="instagram-head clearfix">
+				<div class="pull-left instagram-title">
+					<h4>Instagram</h4>
+					<p>@mjorgensenstudio</p>
+				</div>
+				<a href="#" class="icon-instagram pull-right"><%= image_tag("icon-instagram.png", :border => 0, :alt => "instagram") %></a>
+			</div>
+			<div class="instagram-feed">
+				<!-- Instagram Feed -->
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span12 copyright">
+			<p>
+			  <%= t('.copyright', :year => Time.now.year, :site_name => Refinery::Core.site_name) %>. All Rights Reserved.
+			</p>
+		</div>
+	</div>
+</div>
