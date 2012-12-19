@@ -1,11 +1,22 @@
-<% content_for :body do %>
-  <ul id="projects">
-    <% @projects.each do |project| %>
-      <li>
-        <%= link_to project.title, refinery.projects_project_path(project) %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= render '/refinery/content_page' %>
+<div class="projects-wrap">
+	<ul class="unstyled projects clearfix">
+		<% @projects.each do |project| %>
+		<li id="<%= dom_id(project) %>" class="project span4">
+		    <% if project.cover_image.present? %>
+		      <div class="image">
+		        <%= link_to refinery.projects_project_path(project) do %>
+					<%= image_fu project.cover_image, 
+		              "725x420#",
+		              {:title => project.title} %>
+				<% end %>
+		      </div>
+		    <% end %>
+		  <div class="details">
+	        <h3><%= link_to project.title, refinery.projects_project_path(project) %></h3>
+	        <p><%= raw project.teaser %></p>
+	      </div>
+		</li>
+		<% end %>
+	 </ul>
+</div>
