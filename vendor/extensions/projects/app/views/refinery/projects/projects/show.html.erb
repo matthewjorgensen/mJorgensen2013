@@ -1,20 +1,25 @@
-<section class="project-overview">
+<div id="project-overview" class="hide">
 	<h1><%=raw @project.title %></h1>
+	<a href="#" class="close">x</a>
 	<div class="description">
 		<%=raw @project.description %>
 	</div>
-</section>  
-<section class="project-wrap">
-	<div class="carousel slide">
-		<ul class="carousel-inner unstyled gallery">
+</div>  
+<div id="project-wrap">
+	<div class="gallery-wrap">
+		<ul class="unstyled gallery clearfix">
 	    <% @project.images.each do |image| %>
-    		<li>
-        		<%= image_tag(image.thumbnail().url) %>
-    		</li>
-   		<% end %>
+			<li class="item">
+	       		<%= image_tag(image.thumbnail().url) %>
+	   		</li>
+		<% end %>
 		</ul>
+		<div class="gallery-controls">
+			<a href="#" id="prev">Prev</a>
+			<a href="#" id="next">Next</a>
+		</div>
 	</div>
-	<ul class="unstyled">
+	<ul class="unstyled inline-list clearfix">
 		<li class="thumbnail-cta">
 			<a href="#" class="icon-thumbs" title="View Info">View thumbnails</a>
 		</li>
@@ -25,13 +30,13 @@
 			<a href="#" class="icon-info" title="View Project Info">View project info</a>
 		</li>
 	</ul>
-</section>
-<section class="gallery-thumbnails">
-	<ul class="unstyled thumbnail-wrap">
-	<% @project.images.each do |image| %>
-		<li class="project-thumbnails">
-    		<%= image_tag(image.thumbnail('140x140#c').url) %>
+</div>
+<div id="project-thumbnails" class="hide">
+	<ul class="unstyled thumbnail-wrap inline-list clearfix">
+	<% @project.images.each_with_index do |image, index| %>
+		<li class="project-thumbnail">
+			<a href="#" data="<%= raw index %>" class="thumb"><%=  image_tag(image.thumbnail('140x140#c').url) %></a>
 		</li>
 	<% end %>
 	</ul>
-</section>
+</div>

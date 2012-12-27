@@ -18,6 +18,8 @@ ul.unstyled li:first-child { margin-left: 0; }
 .projects .details h3 { line-height: 24px; margin-top: 0; }
 .projects .details h3 a { color: #fff; text-decoration: none; }
 
+.gallery { height:680px; }
+
 /*footer*/
 #footer { background-color: #cacaca; -moz-box-shadow: inset 0 1px 13px 0 #b0b0b0; -webkit-box-shadow: inset 0 1px 13px 0 #b0b0b0; box-shadow: inset 0 1px 13px 0 #b0b0b0;  padding: 55px 0 50px; }
 #footer .social-wrap ul { margin-bottom: 50px; }

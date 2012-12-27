@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require bootstraps.min
+//= require jquery.cycle.all
+//= require scripts

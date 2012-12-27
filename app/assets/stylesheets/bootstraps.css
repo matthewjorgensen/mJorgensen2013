@@ -601,6 +601,9 @@ ol.unstyled {
   margin-left: 0;
   list-style: none;
 }
+.inline-list li { 
+	float: left; 
+}
 dl {
   margin-bottom: 20px;
 }
@@ -3889,6 +3892,9 @@ button.close {
 .hidden {
   display: none;
   visibility: hidden;
+}
+.hide {
+	display: none;
 }
 .visible-phone {
   display: none !important;

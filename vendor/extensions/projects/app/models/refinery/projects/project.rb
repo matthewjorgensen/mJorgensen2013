@@ -1,9 +1,12 @@
 module Refinery
   module Projects
     class Project < Refinery::Core::BaseModel
+      extend FriendlyId
+        friendly_id :title, :use => [:slugged]
       self.table_name = 'refinery_projects'
-
+      
       attr_accessible :title, :teaser, :cover_image_id, :description, :position
+      
       has_many_page_images 
 
       acts_as_indexed :fields => [:title, :teaser, :description]
