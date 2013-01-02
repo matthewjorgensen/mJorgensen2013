@@ -457,6 +457,7 @@ a:hover {
 .container {
   margin-right: auto;
   margin-left: auto;
+  position: relative;
   *zoom: 1;
 }
 .container:before,
@@ -3830,17 +3831,17 @@ a.thumbnail:hover {
   font-size: 20px;
   font-weight: bold;
   line-height: 20px;
-  color: #000000;
-  text-shadow: 0 1px 0 #ffffff;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+  color: #fff;
+  text-shadow: 0 1px 0 #000;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
 .close:hover {
-  color: #000000;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 button.close {
   padding: 0;

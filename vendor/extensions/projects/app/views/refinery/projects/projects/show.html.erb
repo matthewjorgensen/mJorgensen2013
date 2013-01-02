@@ -1,33 +1,33 @@
-<div id="project-overview" class="hide">
-	<h1><%=raw @project.title %></h1>
+<div id="ProjectOverview" class="hide">
 	<a href="#" class="close">x</a>
+	<h1><%=raw @project.title %></h1>
 	<div class="description">
 		<%=raw @project.description %>
 	</div>
 </div>  
 <div id="project-wrap">
-	<div class="gallery-wrap">
-		<ul class="unstyled gallery clearfix">
-	    <% @project.images.each do |image| %>
-			<li class="item">
-	       		<%= image_tag(image.thumbnail().url) %>
+	<div id="ProjectCarousel" class="gallery-wrap carousel slide">
+		<ul class="unstyled gallery carousel-inner clearfix">
+	    <% @project.images.each_with_index do |image, index| %>
+			<li class="item<%= ' active' if index == 0 %>" data="<%= raw index %>">
+	       		<%= image_tag(image.thumbnail('1170x778').url) %>
 	   		</li>
 		<% end %>
 		</ul>
 		<div class="gallery-controls">
-			<a href="#" id="prev">Prev</a>
-			<a href="#" id="next">Next</a>
+			<a href="#ProjectCarousel" id="prev" data-slide="prev">Prev</a>
+			<a href="#ProjectCarousel" id="next" data-slide="next">Next</a>
 		</div>
 	</div>
-	<ul class="unstyled inline-list clearfix">
-		<li class="thumbnail-cta">
+	<ul class="row unstyled inline-list clearfix">
+		<li class="thumbnail-cta span1">
 			<a href="#" class="icon-thumbs" title="View Info">View thumbnails</a>
 		</li>
-		<li class="project-title">
+		<li class="project-title span10">
 			<h6><%=raw @project.title %></h6>
 		</li>
-		<li class="info">
-			<a href="#" class="icon-info" title="View Project Info">View project info</a>
+		<li class="info span1">
+			<a href="#" class="icon-info pull-right" title="View Project Info">View project info</a>
 		</li>
 	</ul>
 </div>
