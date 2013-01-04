@@ -13,34 +13,34 @@
 			<ul class="unstyled gallery carousel-inner clearfix">
 	    	<% @project.images.each_with_index do |image, index| %>
 				<li class="item<%= ' active' if index == 0 %>" data="<%= raw index %>">
-	       			<%= image_tag(image.thumbnail('1170x778').url) %>
+	       			<%= image_tag(image.thumbnail('980x652').url) %>
 	   			</li>
 				<% end %>
 			</ul>			
 			<div class="gallery-controls">
-				<a href="#ProjectGallery" id="prev" data-slide="prev">Prev</a>
-				<a href="#ProjectGallery" id="next" data-slide="next">Next</a>
+				<a href="#ProjectGallery" id="prev" data-slide="prev"><span>Prev</span></a>
+				<a href="#ProjectGallery" id="next" data-slide="next"><span>Next</span></a>
 			</div>
 		</div>
 		<div id="ProjectThumbnails" class="hide">
 			<ul class="unstyled thumbnail-wrap inline-list clearfix">
 			<% @project.images.each_with_index do |image, index| %>
 				<li class="project-thumbnail">
-					<a href="#" data="<%= raw index %>" class="thumb"><%=  image_tag(image.thumbnail('140x140#c').url) %></a>
+					<a href="#" data="<%= raw index %>" class="thumb"><%=  image_tag(image.thumbnail('170x170#c').url) %></a>
 				</li>
 			<% end %>
 			</ul>
 		</div>
 	</div>
-	<ul class="row unstyled inline-list clearfix">
-		<li class="thumbnail-cta span1">
+	<ul class="unstyled clearfix">
+		<li class="thumbnail-cta pull-left">
 			<a href="#" class="icon-thumbs" title="View Info">View thumbnails</a>
 		</li>
-		<li class="project-title span10">
-			<h6><%=raw @project.title %></h6>
-		</li>
-		<li class="info span1">
+		<li class="info pull-right">
 			<a href="#" class="icon-info pull-right" title="View Project Info">View project info</a>
+		</li>
+		<li class="project-title">
+			<h6><%=raw @project.title %></h6>
 		</li>
 	</ul>
 </div>
