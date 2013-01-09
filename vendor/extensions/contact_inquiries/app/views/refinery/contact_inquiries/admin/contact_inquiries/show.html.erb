@@ -1,0 +1,71 @@
+<div id='records'>
+  <h2><%= t('.contact_inquiry') %></h2>
+  <table id='contact_inquiry' class='inquiry'>
+      <tr>
+        <td>
+          <strong>
+            <%= t('.first_name', :default => t('activerecord.attributes.contact_inquiry.first_name')) %>
+          </strong>
+        </td>
+        <td>
+          <%= @contact_inquiry.first_name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>
+            <%= t('.last_name', :default => t('activerecord.attributes.contact_inquiry.last_name')) %>
+          </strong>
+        </td>
+        <td>
+          <%= @contact_inquiry.last_name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>
+            <%= t('.email', :default => t('activerecord.attributes.contact_inquiry.email')) %>
+          </strong>
+        </td>
+        <td>
+          <%= @contact_inquiry.email %>
+        </td>
+      </tr>
+      <tr>
+        <td valign='top'>
+          <strong>
+            <%= t('.message', :default => t('activerecord.attributes.contact_inquiry.message')) %>
+          </strong>
+        </td>
+        <td>
+          <p style='margin-top: 0px'>
+            <% @contact_inquiry.message.to_s.gsub("\r\n\r\n", "\r\n").split("\r\n").each_with_index do |sentence, index| %>
+              <%=raw "</p><p>" unless index == 0 %>
+              <%= sentence %>
+            <% end %>
+          </p>
+        </td>
+      </tr>
+  </table>
+</div>
+<div id='actions'>
+  <h2><%= t('.details')%></h2>
+  <p>
+    <strong><%= t('.age') %>:</strong> <%= time_ago_in_words(@contact_inquiry.created_at) %>
+  </p>
+  <h2><%= t('.actions') %></h2>
+  <ul>
+    <li>
+      <%= link_to t('.back_to_all_contact_inquiries'), refinery.url_for(:action => 'index'),
+                   :class => "back_icon" %>
+    </li>
+    <li>
+      <%= link_to t('delete', :scope => 'refinery.contact_inquiries.admin.contact_inquiries'),
+                  refinery.contact_inquiries_admin_contact_inquiry_path(@contact_inquiry),
+                  :class => 'delete_icon no-tooltip confirm-delete',
+                  :title => t('delete', :scope => 'refinery.contact_inquiries.admin.contact_inquiries'),
+                  :'data-confirm' => t('message', :scope => 'refinery.admin.delete', :title => @contact_inquiry.name),
+                  :'data-method' => "delete" %>
+    </li>
+  </ul>
+</div>

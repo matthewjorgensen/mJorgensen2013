@@ -14,3 +14,5 @@ Refinery::Projects::Engine.load_seed
 
 # Added by Refinery CMS Hero Images extension
 Refinery::HeroImages::Engine.load_seed
+
+Refinery::ContactInquiries::Engine.load_seed

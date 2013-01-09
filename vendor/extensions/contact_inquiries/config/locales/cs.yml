@@ -1,0 +1,79 @@
+cs:
+  refinery:
+    plugins:
+      contact_inquiries:
+        title: Contact Inquiries
+        description: Poskytuje kontaktní formulář a zaznamenáva contact inquiries
+    contact_inquiries:
+      contact_inquiries:
+        new:
+          send: Odeslat zprávu
+          privacy_policy: Chráníme vaše soukromí
+      admin:
+        contact_inquiries:
+          delete: Trvale odstranit contact inquiry
+          contact_inquiry:
+            read_contact_inquiry: Přečíst contact inquiry
+            said: řekl
+            mark_as_spam: Označit jako spam
+            mark_as_ham: Označit jako přečtené
+          submenu:
+            inbox: Inbox
+            spam: Spam
+            update_notified: Upravit seznam notifikovaných
+            edit_confirmation_email: Upravit potvrzovací e-mail
+          index:
+            no_contact_inquiries: Zatím jste neobdrželi žádné contact inquiries.
+          spam:
+            no_spam: Hurá! Nemáte žádný spam.
+          show:
+            details: Podrobnosti
+            age: Věk
+            actions: Akce
+            back_to_all_contact_inquiries: Zpět na všechny contact inquiries
+            spam: Spam
+            spam_yes: 'ano'
+            contact_inquiry: Contact Inquiry
+            to: Komu
+            from: Od
+            click_to_email: Klikněte pro odeslání této adresy e-mailem
+            phone: Telefon
+            date: Datum
+            message: Zpráva
+        settings:
+          notification_recipients_form:
+            settings_value_name: Zaslat upozornění pro
+            explanation: Pokaždé, když Vás někdo kontaktuje přes vaše webové stránky, Refinery odešle e-mail s upozorněním na nový contact inquiry.
+            hint: Když je odeslán nový contact inquiry, Refinery pošle upozornení na Váš e-mail.
+            example: "Zadejte e-mailové adresy jako: jack@work.com, jill@office.com"
+          confirmation_email_form:
+            to: Komu
+            from: Od
+            subject: Předmet
+            click_to_edit_subject: Klikněte zde pro editaci předmetu
+            explanation: Když Vás někdo kontaktuje přes vaše webové stránky, Refinery odešle e-mail s potvrzením o přijetí odesílateli contact inquiry.
+            below_edit_email_sent: Níže můžete upravit e-mail, který je odeslán.
+            the_customer_making_contact_inquiry: Klient delá contact inquiry
+            message: Zpráva
+            note: "Poznámka: umístěte text %name%, pro určení pozice jména klienta v e-maile"
+      mailer:
+        notification:
+          greeting: Hi there
+          you_recieved_new_contact_inquiry: You just received a new contact inquiry on your website.
+          contact_inquiry_starts: --- contact inquiry starts ---
+          contact_inquiry_ends: --- contact inquiry ends ---
+          from: Od
+          email: E-mail
+          phone: Telefon
+          message: Zpráva
+          closing_line: S pozdravem
+          ps_html: P.S. Všechny vaše contact inquiries jsou uloženy pod záložkou "Contact Inquiries" v Refinery, pokud by jste je chtěli zobrazit pozdeji.
+  activerecord:
+    models:
+      contact_inquiry: Contact Inquiry
+    attributes:
+      contact_inquiry:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        message: Message

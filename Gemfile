@@ -51,3 +51,4 @@ gem 'refinerycms-page-images', '~> 2.0.0'
 
 gem 'refinerycms-projects', :path => 'vendor/extensions'
 gem 'refinerycms-hero_images', :path => 'vendor/extensions'
+gem 'refinerycms-contact_inquiries', :path => 'vendor/extensions'

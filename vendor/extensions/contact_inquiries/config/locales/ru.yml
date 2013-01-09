@@ -1,0 +1,80 @@
+ru:
+  plugins:
+    contact_inquiries:
+      title: Contact Inquiries
+  activerecord:
+    models:
+      contact_inquiry: Contact Inquiry
+      setting: "Настройки запроса"
+    attributes:
+      contact_inquiry:
+        to: "Кому"
+        from: "От"
+        click_to_email: "Нажмите, чтобы отправить по этому адресу"
+        phone: "Телефон"
+        date: "Дата"
+        message: "Сообщение"
+  contact_inquiries:
+    contact_inquiries:
+      new:
+        header_message: "Упс. Возникла небольшая проблемка."
+        message: "Нужно исправить следующие ошибки:"
+        send: "Отправить сообщение"
+        privacy_policy: "Мы относимся с уважением к вашим личным данным"
+    admin:
+      contact_inquiries:
+        contact_inquiry:
+          move_contact_inquiry_to_closed: "Переместить этот запрос в закрытые"
+          move_contact_inquiry_to_open: "Переместить этот запрос в открытые"
+          read_contact_inquiry: "Прочитать запрос"
+          remove_contact_inquiry: "Вы уверены, что хотите удалить запрос от '%{name}'?"
+          title: Contact Inquiries
+          said: "пишет"
+          mark_as_spam: "Пометить как спам"
+          mark_as_ham: "Переместить во Входящие"
+        toggle_status:
+          closed: "Запрос '%{contact_inquiry}' закрыт"
+          reopened: "Запрос '%{contact_inquiry}' открыт заново"
+        submenu:
+          inbox: "Входящие"
+          spam: "Спам"
+          update_notified: Изменить получателей уведомлений
+          edit_confirmation_email: "Редактировать письмо-подтверждение"
+        index:
+          search_results_for: "Найти результаты для %{query}"
+          no_contact_inquiries: "Вы еще не получили ни одного запроса."
+        spam:
+          no_spam: "Ура! Вы не получили спам."
+        show:
+          details: "Подробности"
+          click_to_email: "Нажмите, чтобы отправить"
+          status: "Статус"
+          open: "Открыт"
+          closed: "Закрыт"
+          age: "Срок"
+          actions: "Действия"
+          back_to_all_contact_inquiries: "Назад ко всем запросам"
+          spam: "Спам"
+          spam_yes: 'да'
+          contact_inquiry: Contact Inquiry
+          title: Contact Inquiries
+      settings:
+        update:
+          updated: "'%{setting}' были успешно обновлены."
+        notification_recipients_form:
+          settings_value_name: "Отправить уведомления"
+          explanation: "Каждый раз, когда кто-то связывается с вами посредством вашего сайта, Refinery CMS отправляет уведомление на электронную почту."
+          hint: "Когда поступит новый запрос, Refinery CMS отправит вам уведомление на электронную почту."
+          example: "Введите адрес(а) электронной почты через запятую: anna@mail.ru, ivanov@yandex.ru"
+        confirmation_email_form:
+          to: "Кому"
+          from: "От"
+          subject: "Тема сообщения"
+          click_to_edit_subject: "Редактировать тему сообщения"
+          explanation: "Каждый раз, когда кто-то связывается с вами посредством вашего сайта, Refinery CMS отправляет ему письмо, подтверждающее принятие запроса."
+          below_edit_email_sent: Ниже вы можете отредактировать отсылаемое письмо
+          the_customer_making_contact_inquiry: "Клиент, делающий запрос"
+          message: "Сообщение"
+          note: "Примечание: поместите текст %name% там, где вы хотите, чтобы появилось имя клиента."
+        subject_form:
+          subject_value_name: "Тема сообщения"

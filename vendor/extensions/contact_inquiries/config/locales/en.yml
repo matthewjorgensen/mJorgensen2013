@@ -1,0 +1,79 @@
+en:
+  refinery:
+    plugins:
+      contact_inquiries:
+        title: Contact Inquiries
+        description: Provides a contact form and stores contact inquiries
+    contact_inquiries:
+      contact_inquiries:
+        new:
+          send: Send message
+          privacy_policy: We value your privacy
+      admin:
+        contact_inquiries:
+          delete: Remove this contact inquiry forever
+          contact_inquiry:
+            read_contact_inquiry: Read the contact inquiry
+            said: said
+            mark_as_spam: Mark as spam
+            mark_as_ham: Move to inbox
+          submenu:
+            inbox: Inbox
+            spam: Spam
+            update_notified: Update who gets notified
+            edit_confirmation_email: Edit confirmation email
+          index:
+            no_contact_inquiries: You have not received any contact inquiries yet.
+          spam:
+            no_spam: Hooray! You don't have any spam.
+          show:
+            details: Details
+            age: Age
+            actions: Actions
+            back_to_all_contact_inquiries: Back to all contact inquiries
+            spam: Spam
+            spam_yes: 'yes'
+            contact_inquiry: Contact Inquiry
+            to: To
+            from: From
+            click_to_email: Click to email this address
+            phone: Phone
+            date: Date
+            message: Message
+        settings:
+          notification_recipients_form:
+            settings_value_name: Send notifications to
+            explanation: Every time someone contacts you on your website, Refinery sends out an email to say there is a new contact inquiry.
+            hint: When a new contact inquiry is submitted, Refinery will send an email notification to you.
+            example: "Enter your email address(es) like: jack@work.com, jill@office.com"
+          confirmation_email_form:
+            to: To
+            from: From
+            subject: Subject
+            click_to_edit_subject: Click here to edit the subject
+            explanation: Every time someone contacts you on your website, Refinery sends out an email to confirm the contact inquiry with the person who made it.
+            below_edit_email_sent: Below you can edit the email that is sent out.
+            the_customer_making_contact_inquiry: The customer making the contact inquiry
+            message: Message
+            note: "Note: place the text %name% where you'd like the customer's name to appear in the email"
+      mailer:
+        notification:
+          greeting: Hi there
+          you_recieved_new_contact_inquiry: You just received a new contact inquiry on your website.
+          contact_inquiry_starts: --- contact inquiry starts ---
+          contact_inquiry_ends: --- contact inquiry ends ---
+          from: From
+          email: Email
+          phone: Phone
+          message: Message
+          closing_line: Kind Regards
+          ps_html: P.S. All your contact inquiries are stored in the "Contact Inquiries" section of Refinery should you ever want to view it later there.
+  activerecord:
+    models:
+      contact_inquiry: Contact Inquiry
+    attributes:
+      contact_inquiry:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        message: Message
