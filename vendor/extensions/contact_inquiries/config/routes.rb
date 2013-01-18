@@ -5,7 +5,7 @@ Refinery::Core::Engine.routes.draw do
       collection do
         get :thank_you
       end
-    end
+    end    
   end
 
   # Admin routes
