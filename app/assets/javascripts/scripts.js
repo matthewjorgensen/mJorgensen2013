@@ -62,4 +62,70 @@ $(document).ready(function() {
 		e.preventDefault();
 		$ProjectOverview.fadeOut().removeClass('active');
 	});
+	
+	//instagram
+	$(".instagram .instagram-feed").instagram({
+		show: 3,
+		onComplete: function () {
+			$('.instagram-loading').hide();
+			$('.instagram-feed').show();
+		}
+	});
 });
+
+(function ($) {
+	$.fn.instagram = function (options) {
+		var that = this,
+			settings = {
+				hash: null,
+				userId: null,
+				locationId: null,
+				search: null,
+				accessToken: null,
+				clientId: null,
+				show: null,
+				onLoad: null,
+				onComplete: null,
+				maxId: null,
+				minId: null,
+				next_url: null
+			};
+		
+		options && $.extend(settings, options);
+
+		function createPhotoElement(photo) {
+			return $('<li>').addClass('instagram-photo-wrap').attr('id', photo.id).append(
+			$('<a>').attr('target', '_blank').attr('href', photo.link).append(
+			$('<img>').addClass('instagram-image').attr('src', photo.images.low_resolution.url)));
+		}
+
+		function createEmptyElement() {
+			return $('<div>').addClass('instagram-placeholder').attr('id', 'empty').append($('<p>').html('No photos for this query'));
+		}
+		
+		settings.onLoad != null && typeof settings.onLoad == 'function' && settings.onLoad();
+		
+		$.ajax({
+			type: "GET",
+			dataType: "jsonp",
+			cache: false,
+			url: 'https://api.instagram.com/v1/users/253742312/media/recent/?access_token=253742312.ab103e5.c706817a30bd44bfae4a633fd4a72806',
+			success: function (res) {
+				var length = typeof res.data != 'undefined' ? res.data.length : 0;
+				var limit = settings.show != null && settings.show < length ? settings.show : length;
+
+				if (limit > 0) {
+					for (var i = 0; i < limit; i++) {
+						that.append(createPhotoElement(res.data[i]));
+					}
+				} else {
+					that.append(createEmptyElement());
+				}
+
+				settings.onComplete != null && typeof settings.onComplete == 'function' && settings.onComplete(res.data, res);
+			}
+		});
+
+		return this;
+	};
+})(jQuery);
