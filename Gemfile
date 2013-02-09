@@ -8,6 +8,9 @@ gem 'rails', '3.2.8'
 group :development, :test do
   gem 'sqlite3'
 end
+group :production do
+  gem 'pg'
+end
 
 
 # Gems used only for assets and not required
@@ -52,3 +55,6 @@ gem 'refinerycms-page-images', '~> 2.0.0'
 gem 'refinerycms-projects', :path => 'vendor/extensions'
 gem 'refinerycms-hero_images', :path => 'vendor/extensions'
 gem 'refinerycms-contact_inquiries', :path => 'vendor/extensions'
+
+# New Relic
+gem 'newrelic_rpm'
