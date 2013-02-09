@@ -65,7 +65,7 @@ $(document).ready(function() {
 	
 	//instagram
 	$(".instagram .instagram-feed").instagram({
-		show: 3,
+		show: 6,
 		onComplete: function () {
 			$('.instagram-loading').hide();
 			$('.instagram-feed').show();
