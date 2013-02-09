@@ -56,5 +56,6 @@ gem 'refinerycms-projects', :path => 'vendor/extensions'
 gem 'refinerycms-hero_images', :path => 'vendor/extensions'
 gem 'refinerycms-contact_inquiries', :path => 'vendor/extensions'
 
+gem 'taps'
 # New Relic
 gem 'newrelic_rpm'
