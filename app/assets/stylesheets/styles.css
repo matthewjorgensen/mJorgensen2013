@@ -64,7 +64,7 @@ ul.unstyled li:first-child { margin-left: 0; }
 .instagram .instagram-loading { text-align: center; }
 .instagram .instagram-feed { display: none; }
 .instagram .instagram-feed .instagram-photo-wrap { margin-bottom: 10px; width: 33.33%; }
-.instagram .instagram-feed .instagram-photo-wrap:nth-child(2n) { text-align: center; }
+.instagram .instagram-feed .instagram-photo-wrap:nth-child(3n+2) { text-align: center; }
 .instagram .instagram-feed .instagram-photo-wrap:nth-child(3n) { text-align: right; }
 .instagram .instagram-feed .instagram-photo-wrap img { width: 91%; }
 @media (min-width: 768px) and (max-width: 979px) {
